@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 http_archive(
     name = "build_stack_rules_proto",
@@ -23,16 +24,19 @@ load("@build_stack_rules_proto//java:deps.bzl", "java_proto_compile")
 
 java_proto_compile()
 
-local_repository(
+git_repository(
     name = "trillian",
-    path = "/usr/local/google/home/mhutchinson/go/src/github.com/google/trillian",
+    branch = "bazel_fun",
+    remote = "https://github.com/mhutchinson/trillian.git",
 )
 
-local_repository(
+git_repository(
     name = "googleapi",
-    path = "/usr/local/google/home/mhutchinson/go/src/github.com/google/googleapis",
+    branch = "dropload",
+    remote = "https://github.com/mhutchinson/googleapis.git",
 )
 
+# TODO(mhutchinson): Determine why Go libraries are required
 http_archive(
     name = "io_bazel_rules_go",
     strip_prefix = "rules_go-7d17d496a6b32f6a573c6c22e29c58204eddf3d4",
