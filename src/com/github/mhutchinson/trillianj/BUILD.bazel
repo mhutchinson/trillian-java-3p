@@ -1,9 +1,5 @@
 load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
 
-_JAVA_GRPC_DEPS = [
-    "@com_google_api_grpc_proto_google_common_protos//jar",
-]
-
 java_proto_library(
     name = "trillian_admin_api_java_proto",
     deps = [
