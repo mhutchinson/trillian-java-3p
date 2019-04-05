@@ -1,0 +1,20 @@
+#load("@build_stack_rules_proto//java:java_proto_compile.bzl", "java_proto_compile")
+#
+#java_proto_compile(
+#    name = "trillian_admin_api_java_proto",
+#    deps = [
+#        "@trillian//:trillian_admin_api_proto",
+#        "@trillian//:trillian_proto",
+#    ],
+#)
+
+#load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+#
+#java_proto_library(
+#    name = "java_trillian_admin_api_proto",
+#    visibility = ["//visibility:public"],
+#    deps = [
+#        "@trillian//:trillian_admin_api_proto",
+#        "@trillian//:trillian_proto",
+#    ],
+#)
