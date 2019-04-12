@@ -30,10 +30,10 @@ git_repository(
     remote = "https://github.com/mhutchinson/trillian.git",
 )
 
-git_repository(
+http_archive(
     name = "googleapi",
-    branch = "dropload",
-    remote = "https://github.com/mhutchinson/googleapis.git",
+    url = "https://github.com/googleapis/googleapis/archive/master.zip",
+    strip_prefix = "googleapis-master",
 )
 
 # TODO(mhutchinson): Determine why Go libraries are required
